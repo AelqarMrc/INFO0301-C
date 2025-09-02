@@ -9,11 +9,11 @@ int main(void)
     printf("Donnez la largeur du rectangle : ");
     scanf("%d", &b);
     
-    printf("\n");
-    fflush(stdout);
+   /* printf("\n");
+    fflush(stdout); */             //Le bout de code qui pose probleme
  
 
-    void rectangle(a,b)
+    void rectangle(a,b)     //Dessine sur la console un rectangle d'etoiles
     {
         for(int i; i<a; i++)        //nombre de lignes d'etoiles (hauteur)
         {
