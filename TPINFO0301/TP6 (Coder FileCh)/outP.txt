@@ -1,0 +1,6 @@
+contenu apres remplissage : 10 0 4 8 5 -3 30 5 17 8 
+	 => taille (2 fois) : 10 10
+contenu avant inversion : 10 0 4 8 5 -3 30 5 17 8 
+contenu apres inversion : 8 17 5 30 -3 5 8 4 0 10 
+contenu apres vidage : 
+	 => taille : 0

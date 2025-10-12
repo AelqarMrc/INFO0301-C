@@ -1,0 +1,39 @@
+# Info0301 2025-2026
+# TP 4 : tours de Hanoi
+# Ch Jaillet
+# 25/9/2025
+#*****************
+# fic : makefile2
+
+EXE=a.out
+CFLAGS=-Wall -Werror
+LDFLAGS=
+
+# compilation séparée avec vérification
+# sans règle d'inférence
+
+# point d'entrée
+all: $(EXE)
+
+# modules objets
+PileTSEnt.o : PileTSEnt.c PileTSEnt.h
+	gcc $(CFLAGS) $< -c
+
+plateauHanoi.o : plateauHanoi.c plateauHanoi.h PileTSEnt.h
+	gcc $(CFLAGS) $< -c
+
+principal.o : principal.c plateauHanoi.h
+	gcc $(CFLAGS) $< -c
+
+# règle principale
+$(EXE) : PileTSEnt.o plateauHanoi.o principal.o
+	gcc $(LDFLAGS) $^ -o $@
+
+###################
+# et aussi : nettoyage
+
+clean :
+	rm *.o
+
+mrproper : clean
+	rm $(EXE)

@@ -1,0 +1,16 @@
+# Info0301 2025-2026
+# TP 4 : tours de Hanoi
+# Ch Jaillet
+# 25/9/2025
+#*****************
+# fic : makefile1
+
+# output : a.out
+# compilation séparée mais sans vérification des dépendances
+
+all:
+	gcc PileTSEnt.c -c
+	gcc plateauHanoi.c -c
+	gcc principal.c -c
+	# puis le link
+	gcc PileTSEnt.o plateauHanoi.o principal.o

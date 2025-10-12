@@ -1,0 +1,37 @@
+# Info0301 2025-2026
+# TP 4 : tours de Hanoi
+# Ch Jaillet
+# 25/9/2025
+#*****************
+# fic : makefile2
+
+# output : a.out
+
+# compilation séparée avec vérification 
+# sans règle d'inférence / variables
+
+# point d'entrée
+all: a.out
+
+# modules objets
+PileTSEnt.o : PileTSEnt.c PileTSEnt.h
+	gcc PileTSEnt.c -c
+	
+plateauHanoi.o : plateauHanoi.c plateauHanoi.h PileTSEnt.h
+	gcc plateauHanoi.c -c
+
+principal.o : principal.c plateauHanoi.h
+	gcc principal.c -c
+
+# règle principale
+a.out : PileTSEnt.o plateauHanoi.o principal.o
+	gcc PileTSEnt.o plateauHanoi.o principal.o
+
+###################
+# et aussi : nettoyage
+
+clean : 
+	rm *.o
+
+mrproper : clean
+	rm a.out
