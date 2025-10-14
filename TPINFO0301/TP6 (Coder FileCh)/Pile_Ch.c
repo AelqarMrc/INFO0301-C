@@ -1,7 +1,5 @@
 #include "Pile_.h"
 #include "Pile_Ch.h"
-#include "Cellule.h"
-
 #include "stdlib.h"
 
 void creerPile(Pile_ *pp)
