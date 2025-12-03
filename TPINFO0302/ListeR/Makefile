@@ -11,7 +11,8 @@ LR_principal.o : LR_principal.c Key.h LR.h
 $(EXE) : LR.o LR_principal.o
 	gcc $^ -o $@
 
-clean : rm *.o
+clean : 
+	rm *.o
 
 mrproper : clean 
 	rm $(EXE)

@@ -29,28 +29,37 @@ Element2p* LR_rechercher(LR lr, Key k)
     else
     {
         p = p -> svt;
-        LR_rechercher(p, k);
+        return LR_rechercher(p, k);
     }
     return p;
 }
 
 void LR_supprimer(LR* plr, Element2p* pe)
 {
-    if (*plr != NULL)  // Si vide 
+    if (*plr == NULL)  // Si vide 
         return;
+    
+    else if ((pe -> prec == NULL) && (pe -> svt == NULL)) // Si 1 élément
+    {
+        *plr = NULL;
+    }
+    
+    else if ((pe -> svt != NULL) && (pe -> prec != NULL)) // Cas général
+    {
+        pe -> svt -> prec = pe -> prec;
+        pe -> prec -> svt = pe -> svt;   
+    }
+
     else if (pe -> prec == NULL)  // Si au début 
     {
         pe -> svt -> prec = NULL;
         *plr = pe -> svt;
     }
+
     else if (pe -> svt == NULL)  // Si à la fin
     {
         pe -> prec -> svt = NULL;
     }
-    else  // Cas général
-    {
-        pe -> svt -> prec = pe -> prec;
-        pe -> prec -> svt = pe -> svt;   
-    }
+    
     free(pe);  //Liberation 
 }
