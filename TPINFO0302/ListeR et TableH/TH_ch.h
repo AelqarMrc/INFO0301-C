@@ -3,9 +3,11 @@
 #define MAX 10
 #include "LR.h"
 
-typedef LR* TH[MAX];
+typedef LR* TH;
 
-void h(Key);
+// Fonction de hashage 
+
+void h(Key*);
 
 // Fonction de création et de libération (Procédure en Algo)
 
@@ -14,7 +16,7 @@ void TH_liberer(TH*);
 
 // Fonction de consultation 
 
-Element2p TH_rechercher(TH, Key);
+Element2p* TH_rechercher(TH, Key);
 
 
 // Fonction de modification
