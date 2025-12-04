@@ -7,14 +7,14 @@ typedef LR* TH[MAX];
 
 void h(Key);
 
-// Fonction de création et de vidage (Procédure en Algo)
+// Fonction de création et de libération (Procédure en Algo)
 
 void TH_initialiser(TH*);
-void TH_vider(TH*);
+void TH_liberer(TH*);
 
 // Fonction de consultation 
 
-Element2p TH_rechercher(TH, int);
+Element2p TH_rechercher(TH, Key);
 
 
 // Fonction de modification
