@@ -3,9 +3,9 @@
 #include "stdlib.h"
 
 // Fonction de hashage
-void h(Key *k)
+int h(Key k)
 {
-    *k = 1 + (*k-1)%MAX;
+    k = 1 + (k-1)%MAX;
 }
 
 // Fonction de création et de liberation
@@ -28,8 +28,8 @@ void TH_liberer(TH* T)
 
 Element2p* TH_rechercher(TH T, Key k)
 {
-    h(k);
-    LR_rechercher(T+k, k);
+    int i = h(k);
+    return LR_rechercher(T[i], k);   
 }
 
 // Fonction de modification 
