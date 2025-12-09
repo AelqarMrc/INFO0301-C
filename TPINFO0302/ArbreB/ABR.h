@@ -19,8 +19,8 @@ typedef Noeud* ABR;
 Noeud* ABR_rechercher(ABR, Key);
 Noeud* ABR_minimum(ABR);
 Noeud* ABR_maximum(ABR);
-Noeud* ABR_predecesseur(ABR, Key);
-Noeud* ABR_successeur(ABR, Key);
+Noeud* ABR_predecesseur(ABR);
+Noeud* ABR_successeur(ABR);
 
 /**********************************/
 
