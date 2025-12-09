@@ -4,6 +4,19 @@
 
 /*******************************************/
 
+// init_noeud(...);
+
+Noeud* init_noeud()
+{
+    Noeud* n = malloc(sizeof(Noeud));
+    n -> pere = NULL;
+    n -> filsG = NULL;
+    n -> filsD = NULL;
+    n -> key = NULL;
+}
+
+/*******************************************/
+
 // Fonction de recherche implémentation
 
 Noeud* ABR_rechercher(ABR x, Key k)
@@ -62,7 +75,25 @@ Noeud* ABR_successeur(ABR x, Key k)
 
 // Fonction de modification implémentation
 
-void ABR_inserer(ABR x, Key k)
+void ABR_inserer(ABR* px, Key k)
 {
+    if (*px==NULL) // ABR COURANT VIDE -> cas trivial
+    {
+        *px = init_noeud(); // CREATION D'UN NOUVEAU NOEUD
+        (*px)->key = k;
+    }
     
+    else if (k == (*px)->key) // SI EXISTE DEJA ON SORT -> cas moins trivial
+        return;
+    
+    else if (k < (*px)->key) // VAL DE LA CLE INFERIEUR A L'ABR COURANT -> cas général
+        ABR_inserer(&((*px)->filsG), k); // PASSAGE DE PARAMETRE DE L'ADRESSE DU FILS GAUCHE DONC &(...)
+    
+    else // VAL DE LA CLE SUPERIEUR A L'ABR COURANT
+        ABR_inserer(&((*px)->filsD), k);
+}
+
+void ABR_supprimer(ABR* px, Noeud* n)
+{
+
 }
