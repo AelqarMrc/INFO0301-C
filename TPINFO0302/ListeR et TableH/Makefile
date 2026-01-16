@@ -2,7 +2,7 @@ EXE = a.out
 CFLAGS=-Wall -Werror
 
 all : $(EXE)
-LR.o : LR.c LR.h Key.h
+LR.o : LR.c LR.h
 	gcc $(CFLAGS) $< -c
 
 LR_principal.o : LR_principal.c Key.h LR.h

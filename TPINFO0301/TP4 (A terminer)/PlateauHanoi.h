@@ -1,6 +1,6 @@
 #ifndef PLATEAUHANOI_H
 #define PLATEAUHANOI_H
-# 
+#include "PileTSEnt.h"
 
 typedef struct 
 {
@@ -9,6 +9,10 @@ typedef struct
 
 }plateauHanoi;
 
-void creerPlH();
+void creerPlH(plateauHanoi*);
+int finiPlH(plateauHanoi);
+void deplacerPlH(plateauHanoi*, int i, int j);
+void afficherPlH(plateauHanoi);
 
-#endif 
+
+#endif

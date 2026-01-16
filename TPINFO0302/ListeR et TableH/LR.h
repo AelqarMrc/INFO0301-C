@@ -1,6 +1,5 @@
 #ifndef __LR_H__ 
 #define __LR_H__
-#include "Key.h"
 
 typedef struct xElement2p Element2p;
 
