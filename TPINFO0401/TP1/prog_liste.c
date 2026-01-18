@@ -21,10 +21,11 @@ int main(void)
     for (int i = 0; i < 4; i++)
     {
         printf("Entrez l'indice du sommet : ");
-        initialiser_cellule(&c1, 0);
-        scanf("%d", &(c1.id_sommet));
+        cellule* c1 = malloc(sizeof(cellule));
+        initialiser_cellule(c1, 0);
+        scanf("%d", &(c1->id_sommet));
         printf("\n");
-        inserer_liste(&l,&c1);    
+        inserer_liste(&l,c1);    
         printf("%p\n", l.tete);
     }
 

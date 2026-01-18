@@ -19,8 +19,9 @@ void afficher_liste(liste l){
     cellule* x = l.tete;
     printf("tete --> ");
 
+    while (x!=NULL)
+    {
         printf("%d ", x->id_sommet);
-        x = x->succ;    
-        printf("%d ", x->succ->id_sommet);
-        x = x->succ;    
+        x = x->succ;
+    }      
 }
