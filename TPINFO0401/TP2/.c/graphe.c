@@ -1,8 +1,8 @@
-#include "cellule.h"
-#include "liste.h"
+#include "../.h/cellule.h"
+#include "../.h/liste.h"
 #include "stdlib.h"
 #include "stdbool.h"
-#include "graphe.h"
+#include "../.h/graphe.h"
 #include "stdio.h"
 #define TAILLE 10
 
@@ -34,17 +34,18 @@ void initialiser_graphe(graphe **g, const char* nomFichier){
     
 
     // initlalisation liste d'adjacence
-    liste *l[TAILLE];
-    (*g)->l_adj = *l;
+    (*g)->l_adj = malloc(sizeof(liste[TAILLE]));
+    liste *l = (*g)->l_adj;
     
     
     for (size_t i = 0; i < TAILLE; i++)
     {
         cellule c;
         initialiser_cellule(&c, i+1);
-        initialiser_liste((l[i]));
-        inserer_liste((l[i]), &c);
-        afficher_liste(*(l[i]));
+        initialiser_liste(&(l[i]));
+        printf("zbib\n");
+        inserer_liste(&(l[i]), &c);
+        afficher_liste((l[i]));
     }
     
 

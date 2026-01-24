@@ -1,8 +1,8 @@
-#include "cellule.h"
-#include "liste.h"
+#include "../.h/cellule.h"
+#include "../.h/liste.h"
 #include "stdlib.h"
 #include "stdbool.h"
-#include "graphe.h"
+#include "../.h/graphe.h"
 #include "stdio.h"
 
 

@@ -1,6 +1,5 @@
 #ifndef __LISTE_H__
 #define __LISTE_H__
-/* #include "cellule.h" */
 
 typedef struct {
     cellule *tete;
