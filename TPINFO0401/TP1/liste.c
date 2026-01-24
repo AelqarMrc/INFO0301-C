@@ -25,3 +25,25 @@ void afficher_liste(liste l){
         x = x->succ;
     }      
 }
+
+cellule* rechercher_liste(liste l, int id){
+        cellule *courant = l.tete;
+    while (courant != NULL) {
+        if (courant->id_sommet == id) {
+            return courant;
+        }
+        courant = courant->succ;
+    }
+    return NULL;
+} 
+
+void detruire_liste(liste *l){
+    cellule *courant = l->tete;
+    cellule *suivant;
+    while (courant != NULL) {
+        suivant = courant->succ;
+        free(courant);
+        courant = suivant;
+    }
+    l->tete = NULL;
+}
