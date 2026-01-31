@@ -18,7 +18,7 @@ parcours.o : ./.c/parcours.c ./.h/cellule.h ./.h/liste.h ./.h/graphe.h ./.h/COUL
 file.o : ./.c/file.c ./.h/cellule.h ./.h/liste.h ./.h/graphe.h ./.h/COULEUR.h ./.h/parcours.h ./.h/file.h
 	gcc $(CFLAGS) $< -c
 
-main.o : ./.c/file.c ./.h/cellule.h ./.h/liste.h ./.h/graphe.h ./.h/COULEUR.h ./.h/parcours.h ./.h/file.h
+main.o : ./.c/main.c ./.c/file.c ./.h/cellule.h ./.h/liste.h ./.h/graphe.h ./.h/COULEUR.h ./.h/parcours.h ./.h/file.h
 	gcc $(CFLAGS) $< -c 
 
 $(EXE): cellule.o liste.o graphe.o parcours.o file.o main.o

@@ -12,7 +12,13 @@ typedef struct
 
 void initialiser_file(file*, size_t);
 void detruire_file(file*);
+
+bool file_vide(file);
+bool file_pleine(file);
+
 void enfiler(file*, sommet_parc_larg*);
 sommet_parc_larg* defiler(file*);
+
+void afficher_file(file, size_t);
 
 #endif // !FILE_H
