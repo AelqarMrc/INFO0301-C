@@ -33,7 +33,7 @@ bool file_pleine(file f){
 // Fonction de modification 
 
 void enfiler(file* f, sommet_parc_larg *s){
-    if ((f->queue + 1) % MAX == f->tete)
+    if (file_vide(*f))
     {
         return ; 
     }
@@ -58,7 +58,7 @@ sommet_parc_larg* defiler(file* f){
 
 // Fonction d'affichage 
 
-void afficher_file(file f,size_t TAILLE){
-
+void afficher_file(file f){
+    
     
 }

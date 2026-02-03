@@ -14,5 +14,6 @@ typedef struct {
 
 void initialiser_graphe(graphe**, const char*);
 void afficher_graphe(graphe*); 
+void detruire_graphe(graphe*);
 
 #endif // __GRAPHE_H__

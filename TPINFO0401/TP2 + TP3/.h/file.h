@@ -19,6 +19,6 @@ bool file_pleine(file);
 void enfiler(file*, sommet_parc_larg*);
 sommet_parc_larg* defiler(file*);
 
-void afficher_file(file, size_t);
+void afficher_file(file);
 
 #endif // !FILE_H
